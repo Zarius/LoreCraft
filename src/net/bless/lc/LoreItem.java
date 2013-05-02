@@ -26,13 +26,13 @@ public class LoreItem {
         YamlConfiguration config = YamlConfiguration.loadConfiguration(myFile);
         if (config == null) return null;
         
-        Log.normal("Loading config for "+filename);
+        // Log.normal("Loading config for "+filename);
         
         List<LoreItem> itemList = LoreCraft.itemMap.get(mat);
         if (itemList == null) itemList = new ArrayList<LoreItem>();
         
         for (String key: config.getKeys(false)) {
-            Log.normal("Loading key "+key);
+            // Log.normal("Loading key "+key);
             LoreItem item = new LoreItem();
             item.name = ChatColor.translateAlternateColorCodes('&', config.getString(key+".name", ""));
 
@@ -60,13 +60,13 @@ public class LoreItem {
             } else if (weight instanceof Integer) {
                 item.weight = Double.valueOf(((Integer) weight).toString());
             } else {
-                Log.normal("Weight is a different type!");
+                //Log.normal("Weight is a different type!");
                 item.weight = 0.0;
             }
             
             itemList.add(item);
             
-            Log.normal("loaded item: "+item.name + item.lore.toString() + item.weight);
+            // Log.normal("loaded item: "+item.name + item.lore.toString() + item.weight);
         }
         
         return itemList;

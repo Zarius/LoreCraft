@@ -51,7 +51,7 @@ public class LoreCraft extends JavaPlugin implements Listener {
 	        for (String base : bases) {
 	            // Get the relevant material
 	            Material mat = Material.getMaterial(prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
-                Log.normal("Attempting to load material: "+prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
+               // Log.normal("Attempting to load material: "+prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
 	            if (mat == null) {
 	                // show an error message to console here if material not found
 	            } else {
@@ -76,7 +76,7 @@ public class LoreCraft extends JavaPlugin implements Listener {
             for (String base : bases) {
                 // Get the relevant material
                 Material mat = Material.getMaterial(prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
-                Log.normal("Attempting to load material: "+prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
+                // Log.normal("Attempting to load material: "+prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
                 if (mat == null) {
                     // show an error message to console here if material not found
                 } else {

@@ -13,7 +13,7 @@ public class CraftListener implements Listener {
 
     @EventHandler
     public void onCraftItem(CraftItemEvent event) {
-        Log.normal("starting craft event for "+event.getInventory().getResult().toString());
+        // Log.normal("starting craft event for "+event.getInventory().getResult().toString());
         if (event.isCancelled()) {
             // ignore cancelled events
             return;
@@ -31,14 +31,14 @@ public class CraftListener implements Listener {
             // no matching configs found
             return;
         }
-        Log.normal("Matching config found - cursor: "+event.getCursor());
+        // Log.normal("Matching config found - cursor: "+event.getCursor());
 
         // gather total weightings
         double totalWeight = 0;
         for (LoreItem item : loreItemList) {
             totalWeight += item.weight;
         }
-        Log.normal("totalweight: "+totalWeight);
+        //Log.normal("totalweight: "+totalWeight);
 
         // for each item, roll a dice and set values is success
 
@@ -55,12 +55,12 @@ public class CraftListener implements Listener {
         // New system - via weightings
         double select = LoreCraft.rng.nextDouble() * totalWeight, cumul = 0;
         for (LoreItem item : loreItemList) {
-            Log.normal("Checking "+item.name);
+            // Log.normal("Checking "+item.name);
 
             cumul += item.weight;
             if (select <= cumul) {
                 // do our thing
-                Log.normal("setting: "+item.name);
+                // Log.normal("setting: "+item.name);
 
                 ItemMeta im = result.getItemMeta();
                 im.setDisplayName(item.name);

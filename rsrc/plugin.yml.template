@@ -4,3 +4,6 @@ description: When crafting an item, applies chance to get Lore & Name Change on 
 version: @build.major@.@build.minor@.@build.revision@
 builddate: @build.date-refer to version.properties for details@
 author: Bless
+authors:
+  - Bless
+  - Zarius

@@ -1,0 +1,66 @@
+################################################################################################################
+#                        This Config is used to change Name,Lore and Chance of this item.                      #
+#     Default:                                                                                                 #
+#       chance: 300 <=== is the Total Chance out of these item                                                 #
+#                                                                                                              #
+#    GoldChestplateone:                                                                                        #
+#      name: '&eNAME OF ITEM' <-- ColorCode can be applyed to Name & Lore's                                    #
+#      lore: ['loreline1', 'loreline2', 'loreline3' ...ect]                                                    #
+#      chance: 40   <----- 40 out of 300 chance, play around with it to find your settings, Suggested 300-400  #
+#                                                                                            for RPG Servers   #
+# Color Code's                                                                                                 #
+# &0 BLACK                                                                                                     #
+# &1 DARK BLUE                                                      (….\LoreCraft/….)                          #
+# &2 DARK GREEN                                                      \….\…….…………/…./                           #
+# &3 DARK AQUA                                                        \….\……………/…./                            #
+# &4 DARK RED                                                          \…/;¯|¯;\…/                             #
+# &5 DARK PURPLE                                                                                               #
+# &6 GOLD                                                                                                      #
+# &7 GRAY                                                                                                      #
+# &8 DARK GRAY                                                                                                 #
+# &9 INDIGO                                                                                                    #
+# &A GREEN                                                                                                     #
+# &B AQUA                                                                                                      #
+# &C RED                                                                                                       #
+# &D PINK                                                                                                      #
+# &E YELLOW                                                                                                    #
+# &F WHITE                                                                                                     #
+# &M STRIKE THROUGH                                                                                            #
+# &N UNDERLINED                                                                                                #
+# &L BOLD                                                                                                      #
+# &K RANDOM                                                                                                    #
+# &O ITALIC                                                                                                    #
+#                                                                                                              #
+################################################################################################################
+Default:
+  chance: 300
+  
+GoldChestplateone:
+  name: '&7Poor Gold Chestplate'
+  lore: ['&f1-3 Damage']
+  chance: 40
+
+GoldChestplatetwo:
+  name: '&fCommon Gold Chestplate'
+  lore: ['&f2-3 Damage','&f+1 Attack Speed']
+  chance: 20
+
+GoldChestplatethree:
+  name: '&aUncommon Gold Chestplate'
+  lore: ['&f3-4 Damage', '&a+2 Health']
+  chance: 20
+
+GoldChestplatefour:
+  name: '&eRare Gold Chestplate'
+  lore: ['&f3-5 Damage', '&f+1 Attack Speed', '&a+2 Health']
+  chance: 10
+
+GoldChestplatefive:
+  name: '&5Epic Gold Chestplate'
+  lore: ['&f4-6 Damage', '&f+1 Attack Speed', '&a+1 Regen', '&a+2 Health']
+  chance: 9
+
+GoldChestplatesix:
+  name: '&6Legendary Gold Chestplate'
+  lore: ['&f5-7 Damage', '&f+2 Attack Speed', '&a+2 Regen', '&a+4 Health', '&6He who Holds the power of the WOOD!']
+  chance: 1
