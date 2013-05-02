@@ -1,0 +1,6 @@
+name: LoreCraft
+main: net.bless.lc.LoreCraft
+description: When crafting an item, applies chance to get Lore & Name Change on them this plugin is meant to be applied with other plugins that apply lore stats.
+version: 0.1.27
+builddate: 2013/05/03 03:31
+author: Bless

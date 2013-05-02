@@ -4,33 +4,37 @@
 #Over_All_Chance is the base chance for the items i found 400 to be the best RPG feel 
 #giving it for a chance to getting the items play around with it and find your setting 
 #Higher the Number the Harder the lower the Number the Easyer
-Over_All_Chance: 400
+Default:
+  chance: 300
+  
 LeatherLeggingone:
   name: '&7Poor Leather Legging'
-  lore1: '&f1-3 Damage'
+  lore: '&f1-3 Damage'
+  chance: 40
+
 LeatherLeggingtwo:
   name: '&fCommon Leather Legging'
-  lore1: '&f2-3 Damage'
-  lore2: '&f+1 Attack Speed'
+  lore: ['&f2-3 Damage','&f+1 Attack Speed']
+  chance: 20
+
 LeatherLeggingthree:
   name: '&aUncommon Leather Legging'
-  lore1: '&f3-4 Damage'
-  lore2: '&a+2 Health'
+  lore: ['&f3-4 Damage', '&a+2 Health']
+  chance: 20
+
 LeatherLeggingfour:
   name: '&eRare Leather Legging'
-  lore1: '&f3-5 Damage'
-  lore2: '&f+1 Attack Speed'
-  lore3: '&a+2 Health'
+  lore: ['&f3-5 Damage', '&f+1 Attack Speed', '&a+2 Health']
+  chance: 10
+
 LeatherLeggingfive:
   name: '&5Epic Leather Legging'
-  lore1: '&f4-6 Damage'
-  lore2: '&f+1 Attack Speed'
-  lore3: '&a+1 Regen'
-  lore4: '&a+2 Health'
+  lore: ['&f4-6 Damage', '&f+1 Attack Speed', '&a+1 Regen', '&a+2 Health']
+  chance: 9
+
 LeatherLeggingsix:
   name: '&6Legendary Leather Legging'
-  lore1: '&f5-7 Damage'
-  lore2: '&f+2 Attack Speed'
-  lore3: '&a+2 Regen'
-  lore4: '&a+4 Health'
-  lore5: '&6He who Holds the power of the WOOD!
+  lore: ['&f5-7 Damage', '&f+2 Attack Speed', '&a+2 Regen', '&a+4 Health', '&6He who Holds the power of the WOOD!']
+  chance: 1
+
+  
