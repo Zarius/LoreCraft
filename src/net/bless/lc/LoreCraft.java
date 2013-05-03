@@ -71,7 +71,27 @@ public class LoreCraft extends JavaPlugin implements Listener {
 	    bases = new ArrayList<String>(Arrays.asList("Sword"));
 
         
-        // loop through prefix & suffix to make LeatherBoot, LeatherChestplate, etc...
+        // loop through prefix & suffix to make StoneSword, DiamondSword, etc...
+        for (String prefix : prefixes) {
+            for (String base : bases) {
+                // Get the relevant material
+                Material mat = Material.getMaterial(prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
+                 Log.normal("Attempting to load material: "+prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
+                if (mat == null) {
+                    // show an error message to console here if material not found
+                } else {
+                    // load the config
+                    List<LoreItem> list = LoreItem.loadConfig(mat, "Weapons/");
+                    if (list != null) itemMap.put(mat, list);
+                }
+            }
+        }
+	    // Axe's
+	    prefixes = new ArrayList<String>(Arrays.asList("Wood", "Stone", "Iron", "Gold", "Diamond"));
+	    bases = new ArrayList<String>(Arrays.asList("Axe"));
+
+        
+        // loop through prefix & suffix to make StoneAxe, DiamondAxe, etc...
         for (String prefix : prefixes) {
             for (String base : bases) {
                 // Get the relevant material
