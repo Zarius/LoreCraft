@@ -3,7 +3,7 @@
 #     Default:                                                                                                 #
 #       chance: 300 <=== is the Total Chance out of these item                                                 #
 #                                                                                                              #
-#    StoneSwordone:                                                                                            #
+#    GoldHoeone:                                                                                               #
 #      name: '&eNAME OF ITEM' <-- ColorCode can be applyed to Name & Lore's                                    #
 #      lore: ['loreline1', 'loreline2', 'loreline3' ...ect]                                                    #
 #      chance: 40   <----- 40 out of 300 chance, play around with it to find your settings, Suggested 300-400  #
@@ -34,33 +34,33 @@
 ################################################################################################################
 Default:
   chance: 300
-
-StoneSwordone:
-  name: '&7Poor Stone Sword'
+  
+GoldHoeone:
+  name: '&7Poor Gold Hoe'
   lore: ['&f1-3 Damage']
   chance: 40
 
-StoneSwordtwo:
-  name: '&fCommon Stone Sword'
+GoldHoetwo:
+  name: '&fCommon Gold Hoe'
   lore: ['&f2-3 Damage','&f+1 Attack Speed']
   chance: 20
 
-StoneSwordthree:
-  name: '&aUncommon Stone Sword'
+GoldHoethree:
+  name: '&aUncommon Gold Hoe'
   lore: ['&f3-4 Damage', '&a+2 Health']
   chance: 20
 
-StoneSwordfour:
-  name: '&eRare Stone Sword'
+GoldHoefour:
+  name: '&eRare Gold Hoe'
   lore: ['&f3-5 Damage', '&f+1 Attack Speed', '&a+2 Health']
   chance: 10
 
-StoneSwordfive:
-  name: '&5Epic Stone Sword'
+GoldHoefive:
+  name: '&5Epic Gold Hoe'
   lore: ['&f4-6 Damage', '&f+1 Attack Speed', '&a+1 Regen', '&a+2 Health']
   chance: 9
 
-StoneSwordsix:
-  name: '&6Legendary Stone Sword'
+GoldHoesix:
+  name: '&6Legendary Gold Hoe'
   lore: ['&f5-7 Damage', '&f+2 Attack Speed', '&a+2 Regen', '&a+4 Health', '&6He who Holds the power of the WOOD!']
   chance: 1

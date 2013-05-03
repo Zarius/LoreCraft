@@ -3,7 +3,7 @@
 #     Default:                                                                                                 #
 #       chance: 300 <=== is the Total Chance out of these item                                                 #
 #                                                                                                              #
-#    StoneSwordone:                                                                                            #
+#    GoldShovelone:                                                                                            #
 #      name: '&eNAME OF ITEM' <-- ColorCode can be applyed to Name & Lore's                                    #
 #      lore: ['loreline1', 'loreline2', 'loreline3' ...ect]                                                    #
 #      chance: 40   <----- 40 out of 300 chance, play around with it to find your settings, Suggested 300-400  #
@@ -34,33 +34,33 @@
 ################################################################################################################
 Default:
   chance: 300
-
-StoneSwordone:
-  name: '&7Poor Stone Sword'
+  
+GoldShovelone:
+  name: '&7Poor Gold Shovel'
   lore: ['&f1-3 Damage']
   chance: 40
 
-StoneSwordtwo:
-  name: '&fCommon Stone Sword'
+GoldShoveltwo:
+  name: '&fCommon Gold Shovel'
   lore: ['&f2-3 Damage','&f+1 Attack Speed']
   chance: 20
 
-StoneSwordthree:
-  name: '&aUncommon Stone Sword'
+GoldShovelthree:
+  name: '&aUncommon Gold Shovel'
   lore: ['&f3-4 Damage', '&a+2 Health']
   chance: 20
 
-StoneSwordfour:
-  name: '&eRare Stone Sword'
+GoldShovelfour:
+  name: '&eRare Gold Shovel'
   lore: ['&f3-5 Damage', '&f+1 Attack Speed', '&a+2 Health']
   chance: 10
 
-StoneSwordfive:
-  name: '&5Epic Stone Sword'
+GoldShovelfive:
+  name: '&5Epic Gold Shovel'
   lore: ['&f4-6 Damage', '&f+1 Attack Speed', '&a+1 Regen', '&a+2 Health']
   chance: 9
 
-StoneSwordsix:
-  name: '&6Legendary Stone Sword'
+GoldShovelsix:
+  name: '&6Legendary Gold Shovel'
   lore: ['&f5-7 Damage', '&f+2 Attack Speed', '&a+2 Regen', '&a+4 Health', '&6He who Holds the power of the WOOD!']
   chance: 1

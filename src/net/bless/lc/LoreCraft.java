@@ -101,7 +101,67 @@ public class LoreCraft extends JavaPlugin implements Listener {
                     // show an error message to console here if material not found
                 } else {
                     // load the config
-                    List<LoreItem> list = LoreItem.loadConfig(mat, "Weapons/");
+                    List<LoreItem> list = LoreItem.loadConfig(mat, "Tools/");
+                    if (list != null) itemMap.put(mat, list);
+                }
+            }
+        }
+	    // PickAxe
+	    prefixes = new ArrayList<String>(Arrays.asList("Wood", "Stone", "Iron", "Gold", "Diamond"));
+	    bases = new ArrayList<String>(Arrays.asList("Pickaxe"));
+
+        
+        // loop through prefix & suffix to make StonePickAxe, DiamondPickAxe, etc...
+        for (String prefix : prefixes) {
+            for (String base : bases) {
+                // Get the relevant material
+                Material mat = Material.getMaterial(prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
+                 Log.normal("Attempting to load material: "+prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
+                if (mat == null) {
+                    // show an error message to console here if material not found
+                } else {
+                    // load the config
+                    List<LoreItem> list = LoreItem.loadConfig(mat, "Tools/");
+                    if (list != null) itemMap.put(mat, list);
+                }
+            }
+        }
+	    // Shovel
+	    prefixes = new ArrayList<String>(Arrays.asList("Wood", "Stone", "Iron", "Gold", "Diamond"));
+	    bases = new ArrayList<String>(Arrays.asList("Spade"));
+
+        
+        // loop through prefix & suffix to make StoneSpade, DiamondSpade, etc...
+        for (String prefix : prefixes) {
+            for (String base : bases) {
+                // Get the relevant material
+                Material mat = Material.getMaterial(prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
+                 Log.normal("Attempting to load material: "+prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
+                if (mat == null) {
+                    // show an error message to console here if material not found
+                } else {
+                    // load the config
+                    List<LoreItem> list = LoreItem.loadConfig(mat, "Tools/");
+                    if (list != null) itemMap.put(mat, list);
+                }
+            }
+        }
+	    // Hoe
+	    prefixes = new ArrayList<String>(Arrays.asList("Wood", "Stone", "Iron", "Gold", "Diamond"));
+	    bases = new ArrayList<String>(Arrays.asList("Hoe"));
+
+        
+        // loop through prefix & suffix to make StoneHoe, DiamondHoe, etc...
+        for (String prefix : prefixes) {
+            for (String base : bases) {
+                // Get the relevant material
+                Material mat = Material.getMaterial(prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
+                 Log.normal("Attempting to load material: "+prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
+                if (mat == null) {
+                    // show an error message to console here if material not found
+                } else {
+                    // load the config
+                    List<LoreItem> list = LoreItem.loadConfig(mat, "Tools/");
                     if (list != null) itemMap.put(mat, list);
                 }
             }
