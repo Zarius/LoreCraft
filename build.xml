@@ -70,6 +70,7 @@
         <property name="output-jar" value="${ant.project.name}.jar" />
 
         <property name="debuglevel" value="source,lines" />
+    	<property name="export-dir" value="/home/zarius/Games/Minecraft/Servers/Ifami/Testing/plugins/" />
 
         <target name="bless">
             <property name="dependencies" value="dependencies" />

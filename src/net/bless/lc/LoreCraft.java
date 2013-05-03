@@ -41,8 +41,8 @@ public class LoreCraft extends JavaPlugin implements Listener {
 	    // TODO/Idea: rather than a fixed list here you could loop through all files in 
 	    // the LoreCraft/configs folder and if they match a material load the file
 	    
-        List<String> prefixes = new ArrayList<String>(Arrays.asList("Leather", "Iron", "Gold", "Diamond", "Chain"));
-	    List<String> bases = new ArrayList<String>(Arrays.asList("Boot", "Chestplate", "Helmet", "Leggings"));
+        List<String> prefixes = new ArrayList<String>(Arrays.asList("Leather", "Iron", "Gold", "Diamond", "Chainmail"));
+	    List<String> bases = new ArrayList<String>(Arrays.asList("Boots", "Chestplate", "Helmet", "Leggings"));
 
 	    // TODO: fix configs for all other armors based on leatherleggings.yml
 	    
@@ -51,7 +51,7 @@ public class LoreCraft extends JavaPlugin implements Listener {
 	        for (String base : bases) {
 	            // Get the relevant material
 	            Material mat = Material.getMaterial(prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
-               // Log.normal("Attempting to load material: "+prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
+                Log.normal("Attempting to load material: "+prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
 	            if (mat == null) {
 	                // show an error message to console here if material not found
 	            } else {
@@ -76,7 +76,7 @@ public class LoreCraft extends JavaPlugin implements Listener {
             for (String base : bases) {
                 // Get the relevant material
                 Material mat = Material.getMaterial(prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
-                // Log.normal("Attempting to load material: "+prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
+                 Log.normal("Attempting to load material: "+prefix.toUpperCase() + (base.isEmpty()?"":"_") + base.toUpperCase());
                 if (mat == null) {
                     // show an error message to console here if material not found
                 } else {
