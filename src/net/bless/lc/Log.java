@@ -12,32 +12,38 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.plugin.Plugin;
 
 public class Log {
     // Place these in your plugins onEnable:
     //      pluginName = this.getDescription().getName();
     //      pluginVersion = this.getDescription().getVersion();
 
-    
-    private static Logger log = LoreCraft.plugin.getLogger();
-    public static Verbosity verbosity = Verbosity.NORMAL;
-    public static String pluginName = "";
-    public static String pluginVersion = "";
-    static ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
- 
+    private final int version = 20130702;
+    public static Logger log;
+    public Verbosity verbosity = Verbosity.NORMAL;
+    public String pluginName = "";
+    public String pluginVersion = "";
+    ConsoleCommandSender console;
 
-    /**
-     * logInfo - display a log message with a standard prefix
-     * 
-     * @param msg Message to be displayed
-     */
-    private static void logInfo(String msg) {
-        log.info("["+pluginName+":"+pluginVersion+"] "+msg);
+    public Log(final Plugin plugin) {
+        if (plugin == null) {
+            pluginName = "Testing";
+            pluginVersion = "1.test";
+            this.log = Logger.getLogger(pluginName);
+        } else {
+            this.log = plugin.getLogger();
+            this.pluginName = plugin.getDescription().getName();
+            this.pluginVersion = plugin.getDescription().getVersion();
+
+            console = Bukkit.getServer().getConsoleSender();
+            setConfigVerbosity(plugin.getConfig());
+        }
     }
 
     // LogInfo & LogWarning - if given a level will report the message
     // only for that level & above
-    public static void logInfo(String msg, Verbosity level) {
+    public void logInfo(final String msg, final Verbosity level) {
         if (verbosity.exceeds(level)) {
             //if (OtherDropsConfig.gColorLogMessages) {
                 ChatColor col = ChatColor.GREEN;
@@ -52,7 +58,7 @@ public class Log {
                     col = ChatColor.AQUA;
                     break;
                 case NORMAL:
-                    col = ChatColor.GREEN;
+                    col = null;
                     break;
                 case LOW:
                     col = ChatColor.GRAY;
@@ -60,9 +66,21 @@ public class Log {
                 default:
                     break;
                 }
-                console.sendMessage((col==null?"":col) + "[" + pluginName + ":"
-                        + pluginVersion + "] " + (col==null?"":ChatColor.RESET)
-                        + msg);
+                sendMessage(msg, col);
+        }
+    }
+
+    /**
+     * @param msg
+     * @param col
+     */
+    public void sendMessage(final String msg, final ChatColor col) {
+        if (console == null) {
+            log.info("["+pluginName+":"+pluginVersion+"] "+msg);
+        } else {
+            console.sendMessage((col==null?"":col) + "[" + pluginName + ":"
+                    + pluginVersion + "] " + (col==null?"":ChatColor.RESET)
+                    + msg);
         }
     }
 
@@ -71,37 +89,37 @@ public class Log {
      * 
      * @param msg Message to be displayed
      */
-    static void logWarning(String msg) {
+    void logWarning(String msg) {
         log.warning("["+pluginName+":"+pluginVersion+"] "+msg);
     }
 
 
-    public static void warning(String msg) {
+    public void warning(String msg) {
         logWarning(msg);
     }
 
-    public static void low(String msg) {
+    public void low(String msg) {
         if (verbosity.exceeds(Verbosity.LOW)) logInfo(msg, Verbosity.LOW);
     }
 
-    public static void normal(String msg) {
+    public void normal(String msg) {
         if (verbosity.exceeds(Verbosity.NORMAL)) logInfo(msg, Verbosity.NORMAL);
     }
 
-    public static void high(String msg) {
+    public void high(String msg) {
         if (verbosity.exceeds(Verbosity.HIGH)) logInfo(msg, Verbosity.HIGH);
     }
 
-    public static void highest(String msg) {
+    public void highest(String msg) {
         if (verbosity.exceeds(Verbosity.HIGHEST)) logInfo(msg, Verbosity.HIGHEST);
     }
 
-    public static void extreme(String msg) {
+    public void extreme(String msg) {
         if (verbosity.exceeds(Verbosity.EXTREME)) logInfo(msg, Verbosity.EXTREME);
     }
 
     // TODO: This is only for temporary debug purposes.
-    public static void stackTrace() {
+    public void stackTrace() {
         if(verbosity.exceeds(Verbosity.EXTREME)) Thread.dumpStack();
     }
 
@@ -111,7 +129,7 @@ public class Log {
      * 
      * @param msg
      */
-    public static void dMsg(String msg) {
+    public void dMsg(String msg) {
         // Deliberately doesn't check gColorLogMessage as I want these messages
         // to stand out in case they
         // are left in by accident
@@ -131,21 +149,22 @@ public class Log {
         }
         
         public boolean exceeds(Verbosity other) {
-            if(level >= other.level) return true;
-            return false;
+            return (level >= other.level);
         }
     }
 
-    static public void setConfigVerbosity(FileConfiguration config) {
+    private final void setConfigVerbosity(FileConfiguration config) {
+        if (config == null) verbosity = Verbosity.NORMAL;
+        
         String verbosityString = config.getString("verbosity", "normal").toLowerCase();
-        if(verbosityString.equals("low")) Log.verbosity = Verbosity.LOW;
-        else if(verbosityString.equals("high")) Log.verbosity =  Verbosity.HIGH;
-        else if(verbosityString.equals("highest")) Log.verbosity =  Verbosity.HIGHEST;
-        else if(verbosityString.equals("extreme")) Log.verbosity =  Verbosity.EXTREME;
-        else Log.verbosity =  Verbosity.NORMAL;
+        if(verbosityString.equals("low")) verbosity = Verbosity.LOW;
+        else if(verbosityString.equals("high")) verbosity =  Verbosity.HIGH;
+        else if(verbosityString.equals("highest")) verbosity =  Verbosity.HIGHEST;
+        else if(verbosityString.equals("extreme")) verbosity =  Verbosity.EXTREME;
+        else verbosity =  Verbosity.NORMAL;
     }
 
-    public static Verbosity getVerbosity() {
+    public Verbosity getVerbosity() {
         return verbosity;
     }
 
