@@ -13,11 +13,12 @@ public class CraftListener implements Listener {
 
     @EventHandler
     public void onCraftItem(CraftItemEvent event) {
-        LoreCraft.log.highest("starting craft event for "+event.getInventory().getResult().toString());
-        if (event.isCancelled()) {
-            // ignore cancelled events
+        if (event.isCancelled() || event.getInventory() == null || event.getInventory().getResult() == null) {
+            // ignore cancelled or invalid events
             return;
         }
+
+        LoreCraft.log.highest("starting craft event for "+event.getInventory().getResult().toString());
 
         if (event.getCursor().getType() != Material.AIR) {
             // ignore - simple fix for non-stackable items
